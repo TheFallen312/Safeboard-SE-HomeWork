@@ -46,10 +46,14 @@ void show_user_books(User a)
 
 int main()
 {
-	Librarian L;
+
 	SYSTEMTIME s;
 	GetLocalTime(&s);
 	bool Exit = false;
+	int nos;
+	cout << "Number of source:";
+	cin >> nos;
+	Librarian L(nos);
 	while (!Exit){
 
 		system("cls");

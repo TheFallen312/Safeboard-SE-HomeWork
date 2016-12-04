@@ -43,6 +43,7 @@ private:
 	void Update_Books_List();
 public:
 	Librarian();
+	Librarian(int s);
 	int GetNumber();
 	int GetNumberOfBooks();
 	User users[10];
@@ -56,4 +57,5 @@ public:
 	void GetExpiredList();
 	bool Expired(Date d, SYSTEMTIME st);
 	int number_of_exp;
+	int source;
 };

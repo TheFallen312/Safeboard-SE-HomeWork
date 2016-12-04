@@ -1,0 +1,3 @@
+TestBook1 0
+TestBook2 1
+TestBook3 0

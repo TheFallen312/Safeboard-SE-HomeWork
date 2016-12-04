@@ -32,6 +32,58 @@ Librarian::Librarian()
 
 }
 
+Librarian::Librarian(int s)
+{
+	ifstream F;
+	F.open("users.txt", ios::in);
+	int i = 0;
+	while (!F.eof())
+	{
+		F >> users[i].UserName >> users[i].number_of_books;
+		F >> users[i].book1_id >> users[i].book1_name >> users[i].book1_date.day >> users[i].book1_date.month >> users[i].book1_date.year;
+		F >> users[i].book2_id >> users[i].book2_name >> users[i].book2_date.day >> users[i].book2_date.month >> users[i].book2_date.year;
+		F >> users[i].book3_id >> users[i].book3_name >> users[i].book3_date.day >> users[i].book3_date.month >> users[i].book3_date.year;
+		i++;
+	};
+	number_of_users = i - 1;
+	F.close();
+	i = 0;
+	switch (s)
+	{
+
+	case 1:
+		F.open("books.txt", ios::in);
+		while (!F.eof())
+		{
+			F >> books[i].book_name >> books[i].aval;
+			i++;
+		};
+		number_of_books = i - 1;
+		F.close();
+		break;
+	case 2:
+		F.open("books2.txt", ios::in);
+		while (!F.eof())
+		{
+			F >> books[i].book_name >> books[i].aval;
+			i++;
+		};
+		number_of_books = i - 1;
+		F.close();
+		break;
+	case 3:
+		F.open("books3.txt", ios::in);
+		while (!F.eof())
+		{
+			F >> books[i].book_name >> books[i].aval;
+			i++;
+		};
+		number_of_books = i - 1;
+		F.close();
+		break;
+	}
+}
+
 int Librarian::GetNumber()
 {
 	return number_of_users;
